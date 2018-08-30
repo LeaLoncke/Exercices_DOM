@@ -78,15 +78,6 @@ var timeExo5 = document.getElementById('timeExo5');
 var pastTimeExo5 = document.getElementById('pastTimeExo5');
 
 
-var pastSecondsExo5 = setInterval(function(){ counterSeconds() }, 1000);
-var secondsExo5 = 0;
-
-function counterSeconds() {
-  secondsExo5++;
-  pastTimeExo5.innerHTML = "You are on this page since " + secondsExo5 + " seconds !";
-}
-
-
 var pastHoursExo5 = setInterval(function(){ counterHours() }, 1000);
 
 function counterHours() {
@@ -100,10 +91,137 @@ function counterHours() {
 }
 
 
+var pastSecondsExo5 = setInterval(function(){ counterSeconds() }, 1000);
+var secondsExo5 = 0;
+
+function counterSeconds() {
+  secondsExo5++;
+  pastTimeExo5.innerHTML = "You are on this page since " + secondsExo5 + " seconds !";
+}
 
 
 
+// Exo 6
 
+var buttonExo6 = document.getElementById('buttonExo6');
+var numberClick = 0;
+
+buttonExo6.onclick = function() {
+
+  numberClick++;
+
+  if (numberClick === 1) {
+    buttonExo6.style.backgroundColor = 'lightblue';
+  }
+  if (numberClick === 2) {
+    buttonExo6.style.backgroundColor = 'blue';
+  }
+  if (numberClick === 3) {
+    buttonExo6.style.backgroundColor = 'red';
+    buttonExo6.innerHTML = "You can not click !";
+    buttonExo6.setAttribute(disabled, disabled);
+
+  }
+
+}
+
+
+// Exo 7
+
+var tableExo7 = document.getElementById('tableExo7');
+var buttonExo7 = document.getElementById('buttonExo7');
+var numberLine = 1;
+
+buttonExo7.onclick = function() {
+
+  numberLine++;
+
+  var rows = tableExo7.insertRow(numberLine);
+  var cell1 = rows.insertCell(0);
+  var cell2 = rows.insertCell(1);
+
+  cell1.innerHTML = "Line " + (numberLine + 1);
+  cell2.innerHTML = "Line " + (numberLine + 1);
+
+}
+
+
+
+// Exo 8
+
+var exo9 = document.getElementById('exo9');
+var div8 = document.createElement('div');
+var a8 = document.createElement('a');
+var img8 = document.createElement('img');
+var p8 = document.createElement('p');
+
+document.body.insertBefore(div8, exo9);
+div8.style.backgroundColor = 'lightgrey';
+
+div8.appendChild(a8);
+a8.href = "#";
+a8.target = "_blank";
+
+a8.appendChild(img8);
+img8.src = "img/img1.jpeg";
+img8.alt = "image 1";
+
+a8.appendChild(p8);
+p8.innerHTML = "description de l'image";
+
+
+
+// Exo 9
+
+var img1 = document.getElementById('img1');
+var img2 = document.getElementById('img2');
+var img3 = document.getElementById('img3');
+var img123 = document.getElementsByClassName('img123');
+var paragraph9 = document.getElementById("p9");
+
+var imagesTable = new Array();
+
+function countImages(element) {
+  element.style.color = 'grey';
+  imagesTable.push(element.id);
+
+  if (imagesTable.length >= 3) {
+    paragraph9.innerHTML = "Félicitations, vous avez cliqué sur les 3 images. Voici leurs id : " + imagesTable[0] + " - " + imagesTable[1] + " - " + imagesTable[2];
+    for (var i = 0; i < img123.length; i++) {
+      img123[i].style.display = 'none';
+    }
+  }
+
+}
+
+img1.addEventListener("click", function removeEvent() {
+    countImages(this);
+    img1.removeEventListener("click", removeEvent);
+});
+
+img2.addEventListener("click", function removeEvent() {
+    countImages(this);
+    img2.removeEventListener("click", removeEvent);
+});
+
+img3.addEventListener("click", function removeEvent() {
+    countImages(this);
+    img3.removeEventListener("click", removeEvent);
+});
+
+
+// Exo 10
+
+var divExo10 = document.getElementById('divExo10');
+var buttonExo10 = document.getElementById('buttonExo10');
+
+// onclick
+buttonExo10.addEventListener("click", waitTwoSeconds);
+
+// function & setTimeout
+function waitTwoSeconds() {
+  setTimeout(function(){ divExo10.innerHTML = "The content as changed !"; }, 2000);
+}
 
 
 
