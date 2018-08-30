@@ -8,3 +8,13 @@
   padding: 15px;
   background-color: lightgrey;
 }
+
+#buttonExo6 {
+  border: solid 1px black;
+  padding: 15px;
+  color: black;
+}
+
+#buttonExo7, #buttonExo10 {
+  margin-top: 10px;
+}
