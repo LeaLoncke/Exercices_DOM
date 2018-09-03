@@ -176,7 +176,6 @@ p8.innerHTML = "description de l'image";
 var img1 = document.getElementById('img1');
 var img2 = document.getElementById('img2');
 var img3 = document.getElementById('img3');
-var img123 = document.getElementsByClassName('img123');
 var paragraph9 = document.getElementById("p9");
 
 var imagesTable = new Array();
@@ -192,7 +191,7 @@ function countImages(element) {
     }
   }
 
-}
+} // end of function countImages(element)
 
 img1.addEventListener("click", function removeEvent() {
     countImages(this);
